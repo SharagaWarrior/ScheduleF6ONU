@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розклад занять — 1 курс, 1 група (1 підгрупа)</title>
+    <style>
+        :root {
+            --bg-color: #0f141c;
+            --card-bg: #18202c;
+            --text-color: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-primary: #38bdf8;
+            --accent-secondary: #818cf8;
+            --border-color: #2a3447;
+            --badge-bg: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--accent-primary);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .schedule-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .day-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .day-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        .day-title {
+            font-size: 1.4rem;
+            color: var(--accent-secondary);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .lessons-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .lesson-item {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 16px;
+            padding: 12px 16px;
+            background-color: var(--badge-bg);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-primary);
+            align-items: center;
+        }
+
+        .lesson-time {
+            font-weight: 600;
+            color: var(--accent-primary);
+            font-size: 0.95rem;
+        }
+
+        .lesson-name {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+
+        .lesson-details {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .badge {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent-primary);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .lesson-item {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Розклад занять</h1>
+            <p class="subtitle">1 курс • 1 група • 1 підгрупа</p>
+        </header>
+
+        <main class="schedule-grid">
+            <!-- Понеділок -->
+            <section class="day-card">
+                <h2 class="day-title">Понеділок</h2>
+                <div class="lessons-list">
+                    <div class="lesson-item">
+                        <div class="lesson-time">III пара<br><span style="font-size:0.85rem; color:var(--text-muted);">11:20 – 12:40</span></div>
+                        <div>
+                            <div class="lesson-name">Алгоритми та програмування</div>
+                            <div class="lesson-details">
+                                <span>Викладач: Юссеф</span>
+                                <span class="badge">лаб. 44</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-time">IV пара<br><span style="font-size:0.85rem; color:var(--text-muted);">12:50 – 14:10</span></div>
+                        <div>
+                            <div class="lesson-name">Алгоритми та програмування</div>
+                            <div class="lesson-details">
+                                <span>Викладач: Юссеф</span>
+                                <span class="badge">лаб. 44</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Вівторок -->
+            <section class="day-card">
+                <h2 class="day-title">Вівторок</h2>
+                <div class="lessons-list">
+                    <div class="lesson-item">
+                        <div class="lesson-time">II пара<br><span style="font-size:0.85rem; color:var(--text-muted);">9:30 – 10:50</span></div>
+                        <div>
+                            <div class="lesson-name">Ін. мова</div>
+                            <div class="lesson-details">
+                                <span>Викладач: Кузнєцова</span>
+                                <span class="badge">ауд. 71</span>
+                                <span class="badge" style="background-color: rgba(129, 140, 248, 0.1); color: var(--accent-secondary);">прак. з 1 по 9 тиж.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-time">V пара<br><span style="font-size:0.85rem; color:var(--text-muted);">14:20 – 15:40</span></div>
+                        <div>
+                            <div class="lesson-name">Алгоритми та програмування</div>
+                            <div class="lesson-details">
+                                <span>Викладач: Палій</span>
+                                <span class="badge" style="background-color: rgba(129, 140, 248, 0.1); color: var(--accent-secondary);">лекція онлайн</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-time">VI пара<br><span style="font-size:0.85rem; color:var(--text-muted);">15:50 – 17:10</span></div>
+                        <div>
+                            <div class="lesson-name">Алгоритми та програмування</div>
+                            <div class="lesson-details">
+                                <span>Викладач: Палій</span>
+                                <span class="badge" style="background-color: rgba(129, 140, 248, 0.1); color: var(--accent-secondary);">лекція онлайн</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Середа -->
+            <section class="day-card">
+                <h2 class="day-title">Середа</h2>
+                <div class="lessons-list">
+                    <div class="lesson-item">
+                        <div class="lesson-time">I пара<br><span style="font-size:0.85rem; color:var(--text-muted);">8:00 – 9:20</span></div>
+                        <div>
+                            <div class="lesson-name">Вища математика</div>
+                            <div class="lesson-details">
+                                <span>Викладач: проф. Скрипник</span>
+                                <span class="badge">ауд. 73</span>
+                                <span class="badge" style="background-color: rgba(129, 140, 248, 0.1); color: var(--accent-secondary);">лекція</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-time">II пара<br><span style="font-size:0.85rem; color:var(--text-muted);">9:30 – 10:50</span></div>
+                        <div>
+                            <div class="lesson-name">ОСС</div>
+                            <div class="lesson-details">
+                                <span>Викладач: доц. Розновець</span>
+                                <span class="badge">ауд. 47</span>
+                                <span class="badge" style="background-color: rgba(129, 140, 248, 0.1); color: var(--accent-secondary);">лекція</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-time">III пара<br><span style="font-size:0.85rem; color:var(--text-muted);">11:20 – 12:40</span></div>
+                        <div>
+                            <div class="lesson-name">ОСС</div>
+                            <div class="lesson-details">
+                                <span>Викладач: доц. Розновець</span>
+                                <span class="badge">ауд. 40</span>
+                                <span class="badge" style="background-color: rgba(129, 140, 248, 0.1); color: var(--accent-secondary);">лабораторна</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-time">V пара<br><span style="font-size:0.85rem; color:var(--text-muted);">14:20 – 15:40</span></div>
+                        <div>
+                            <div class="lesson-name">Українська мова</div>
+                            <div class="lesson-details">
+                                <span>Викладач: проф. Н. Кутуза</span>
+                                <span class="badge">ауд. 95</span>
+                                <span class="badge" style="background-color: rgba(129, 140, 248, 0.1); color: var(--accent-secondary);">з 1 по 7 тиж. лекц. / з 8 тиж. практ.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Четвер -->
+            <section class="day-card">
+                <h2 class="day-title">Четвер</h2>
+                <div class="lessons-list">
+                    <div class="lesson-item">
+                        <div class="lesson-time">I пара<br><span style="font-size:0.85rem; color:var(--text-muted);">8:00 – 9:20</span></div>
+                        <div>
+                            <div class="lesson-name">Дискретна математика</div>
+                            <div class="lesson-details">
+                                <span>Викладач: доц. Якімова</span>
+                                <span class="badge">ауд. 98</span>
+                                <span class="badge" style="background-color: rgba(129, 140, 248, 0.1); color: var(--accent-secondary);">лекція</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-time">II пара<br><span style="font-size:0.85rem; color:var(--text-muted);">9:30 – 10:50</span></div>
+                        <div>
+                            <div class="lesson-name">Дискретна математика</div>
+                            <div class="lesson-details">
+                                <span>Викладач: доц. Якімова</span>
+                                <span class="badge">ауд. 98</span>
+                                <span class="badge" style="background-color: rgba(129, 140, 248, 0.1); color: var(--accent-secondary);">практична</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-time">III пара<br><span style="font-size:0.85rem; color:var(--text-muted);">11:20 – 12:40</span></div>
+                        <div>
+                            <div class="lesson-name">Вища математика</div>
+                            <div class="lesson-details">
+                                <span>Викладач: доц. Коваленко</span>
+                                <span class="badge">ауд. 43</span>
+                                <span class="badge" style="background-color: rgba(129, 140, 248, 0.1); color: var(--accent-secondary);">лекція</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-time">IV пара<br><span style="font-size:0.85rem; color:var(--text-muted);">12:50 – 14:10</span></div>
+                        <div>
+                            <div class="lesson-name">Вища математика</div>
+                            <div class="lesson-details">
+                                <span>Викладач: проф. Скрипник</span>
+                                <span class="badge">ауд. 45</span>
+                                <span class="badge" style="background-color: rgba(129, 140, 248, 0.1); color: var(--accent-secondary);">практична</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- П'ятниця -->
+            <section class="day-card">
+                <h2 class="day-title">П'ятниця</h2>
+                <div class="lessons-list">
+                    <div class="lesson-item">
+                        <div class="lesson-time">II пара<br><span style="font-size:0.85rem; color:var(--text-muted);">9:30 – 10:50</span></div>
+                        <div>
+                            <div class="lesson-name">Введення в спеціальність</div>
+                            <div class="lesson-details">
+                                <span>Викладач: Мартинович</span>
+                                <span class="badge">ауд. 19</span>
+                                <span class="badge" style="background-color: rgba(129, 140, 248, 0.1); color: var(--accent-secondary);">практ. з 9 тиж.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-time">III пара<br><span style="font-size:0.85rem; color:var(--text-muted);">11:20 – 12:40</span></div>
+                        <div>
+                            <div class="lesson-name">Введення в спеціальність</div>
+                            <div class="lesson-details">
+                                <span>Викладач: Мартинович</span>
+                                <span class="badge">ауд. 73</span>
+                                <span class="badge" style="background-color: rgba(129, 140, 248, 0.1); color: var(--accent-secondary);">лекція</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-time">IV пара<br><span style="font-size:0.85rem; color:var(--text-muted);">12:50 – 14:10</span></div>
+                        <div>
+                            <div class="lesson-name">Вища математика</div>
+                            <div class="lesson-details">
+                                <span>Викладач: доц. Коваленко</span>
+                                <span class="badge">ауд. 43</span>
+                                <span class="badge" style="background-color: rgba(129, 140, 248, 0.1); color: var(--accent-secondary);">практична</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Одеський національний університет імені І. І. Мечникова • Комп'ютерна інженерія</p>
+        </footer>
+    </div>
+</body>
+</html>
